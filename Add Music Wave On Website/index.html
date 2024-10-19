@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--==================== METADATOS ====================-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="MusicPlayers">
+  <meta name="keywords" content="HTML-CSS-JS">
+  <meta name="author" content="Rocio Cuello">
+
+  <!--==================== CSS ====================-->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!--==================== TITULO ====================-->
+  <title>MusicPlayers | Add Music Wave On Website</title>
+
+  <!--==================== ICONO DE PESTAÑA ====================-->
+  <link rel="icon" sizes="64x64" href="assets/img/favicon.webp"> 
+</head>
+<body>
+  <div class="hero">
+    <div class="music">
+      <img src="assets/img/album.jpg" alt="Cover image of the song 'Mercy'">
+      <div class="info">
+        <h1>Bad Liar - Imagine Dragons</h1>
+        <p>Album - Origins</p>
+        <div id="waveform"></div>
+        <div class="controls">
+          <img src="assets/img/play.png" id="playBtn" alt="Play button">
+          <img src="assets/img/stop.png" id="stopBtn" alt="Stop button">
+          <img src="assets/img/volume.png" id="volumeBtn" alt="Volume button">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--==================== SCRIPT ====================-->
+  <script src="https://unpkg.com/wavesurfer.js"></script>
+  <script>
+    var playBtn = document.getElementById("playBtn");
+    var stopBtn = document.getElementById("stopBtn");
+    var volumeBtn = document.getElementById("volumeBtn");
+
+    const wavesurfer = WaveSurfer.create({
+      container: '#waveform',
+      waveColor: '#dde5ec',
+      progressColor: '#03cebf',
+      barWidth: 4,
+      height: 90,
+      responsive: true,
+      hideScrollbar: true,
+      barRadius: 4
+    });
+    wavesurfer.load('assets/songs/Bad Liar.mp3');
+    playBtn.onclick = function() {
+      wavesurfer.playPause();
+      if (playBtn.src.includes("play.png")) {
+        playBtn.src = "assets/img/pause.png";
+      } else {
+        playBtn.src = "assets/img/play.png";
+      }
+    };
+    stopBtn.onclick = function() {
+      wavesurfer.stop();
+      playBtn.src = "assets/img/play.png";
+    };
+    volumeBtn.onclick = function() {
+      if (wavesurfer.getMuted()) {
+        wavesurfer.setMuted(false);  
+        volumeBtn.src = "assets/img/volume.png"; 
+      } else {
+        wavesurfer.setMuted(true);
+        volumeBtn.src = "assets/img/mute.png";  
+      }
+    };
+    wavesurfer.on('finish', function() {
+      playBtn.src = "assets/img/play.png";
+      wavesurfer.stop();
+    });
+  </script>  
+</body>
+</html>
