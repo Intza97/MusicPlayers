@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <!--==================== METADATOS ====================-->
   <meta charset="UTF-8">
@@ -18,21 +18,18 @@
   <!--==================== ICONO DE PESTAÑA ====================-->
   <link rel="icon" sizes="64x64" href="assets/img/favicon.webp"> 
 
-   <!--==================== ICONO ====================-->
+   <!--==================== ICONOS ====================-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <div class="main">
   	<p id="logo"><i class="fa fa-music"></i>Música</p>
-    <!-- mostrar_número_canción -->
     <div class="show_song_no">
       <p id="present">1</p>
       <p>/</p>
       <p id="total">5</p>
     </div>
-    <!--- parte izquierda --->
     <div class="left">
-      <!--- imagen de la canción --->
       <img id="track_image">
          <div class="volume">
             <p id="volume_show">90</p>
@@ -40,20 +37,16 @@
             <input type="range" min="0" max="100" value="90" onchange="volume_change()" id="volume">  
          </div>
      </div>
-     <!--- parte derecha --->
   	 <div class="right">
-       <!--- título de la canción y nombre del artista --->
        <div class="song_detail">
            <p id="title">título.mp3</p>
            <p id="artist">Nombre del artista</p>
        </div>
-      <!--- parte central --->
   	 	<div class="middle">
   	       <button onclick="previous_song()" id="pre"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
       	   <button onclick="justplay()" id="play"><i class="fa fa-play" aria-hidden="true"></i></button>
   	       <button onclick="next_song()" id="next"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
   	   </div>
-       <!--- parte de duración de la canción --->
         <div class="duration">
            <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="change_duration()">
            <button id="auto" onclick="autoplay_switch()">Auto &nbsp;<i class="fa fa-circle-o-notch" aria-hidden="true"></i></button>

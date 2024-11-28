@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <!--==================== METADATOS ====================-->
   <meta charset="UTF-8">
@@ -36,26 +36,20 @@
       <div class="player__album">
         <img src="assets/img/yukari.jpg" alt="Album Cover" class="player__img" loading="lazy" />
       </div>
- 
       <h2 class="player__artist">유카리(Yukari)</h2>
       <h3 class="player__song">Just Friends</h3>
- 
       <input type="range" value="0" min="0" max="100" class="player__level" id="progress-bar" />
       <div class="audio-duration">
         <div class="start" id="current-time">00:00</div>
         <div class="end" id="total-time">03:24</div>
       </div>
-      
- 
       <audio class="player__audio" controls id="audio">
         <source src="assets/songs/friends.mp3" type="audio/mpeg" />
       </audio>
- 
       <div class="player__controls">
         <div class="player__btn player__btn--medium" id="backward">
           <i class="fas fa-backward"></i>
         </div>
- 
         <div class="player__btn player__btn--medium blue play" id="play">
           <i class="fas fa-play play-btn"></i>
           <i class="fas fa-pause pause-btn hide"></i> 
